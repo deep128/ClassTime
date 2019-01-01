@@ -1,0 +1,80 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+ClassTimeFront/ClassTime/dist
+ClassTimeFront/ClassTime/tmp
+ClassTimeFront/ClassTime/out-tsc
+
+# dependencies
+ClassTimeFront/ClassTime/node_modules
+
+# IDEs and editors
+ClassTimeFront/ClassTime/.idea
+ClassTimeFront/ClassTime/.project
+ClassTimeFront/ClassTime/.classpath
+ClassTimeFront/ClassTime/.c9/
+ClassTimeFront/ClassTime/*.launch
+ClassTimeFront/ClassTime/.settings/
+ClassTimeFront/ClassTime/*.sublime-workspace
+
+# IDE - VSCode
+ClassTimeFront/ClassTime/.vscode/*
+!ClassTimeFront/ClassTime/.vscode/settings.json
+!ClassTimeFront/ClassTime/.vscode/tasks.json
+!ClassTimeFront/ClassTime/.vscode/launch.json
+!ClassTimeFront/ClassTime/.vscode/extensions.json
+
+# misc
+ClassTimeFront/ClassTime/.sass-cache
+ClassTimeFront/ClassTime/connect.lock
+ClassTimeFront/ClassTime/coverage
+ClassTimeFront/ClassTime/libpeerconnection.log
+ClassTimeFront/ClassTime/npm-debug.log
+ClassTimeFront/ClassTime/yarn-error.log
+ClassTimeFront/ClassTime/testem.log
+ClassTimeFront/ClassTime/typings
+
+# System Files
+ClassTimeFront/ClassTime/.DS_Store
+ClassTimeFront/ClassTime/Thumbs.db
+
+#node
+ClassTimeServices/ClassTimeMainService/.vs
+# compiled output
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/dist
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/tmp
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/out-tsc
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/obj
+
+# dependencies
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/node_modules
+
+# IDEs and editors
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.idea
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.project
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.classpath
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.c9/
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/*.launch
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.settings/
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/*.sublime-workspace
+
+# IDE - VSCode
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.vscode/*
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.vscode/settings.json
+!ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.vscode/tasks.json
+!ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.vscode/launch.json
+!ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.vscode/extensions.json
+
+# misc
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.sass-cache
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/connect.lock
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/coverage
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/libpeerconnection.log
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/npm-debug.log
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/yarn-error.log
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/testem.log
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/typings
+
+# System Files
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/.DS_Store
+ClassTimeServices/ClassTimeMainService/ClassTimeMainService/Thumbs.db
