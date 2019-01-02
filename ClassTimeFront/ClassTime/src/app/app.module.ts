@@ -9,23 +9,28 @@ import { AuthGuard } from './auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './common/interceptors/auth-interceptor';
 import { DialogBoxComponent } from './common/components/dialog-box/dialog-box.component';
-import { MatSnackBar, MatSnackBarContainer, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material';
+import { MatSnackBar, MatSnackBarContainer, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule, MatMenuModule, MatIconModule, MatSidenavModule } from '@angular/material';
 import { Overlay } from '@angular/cdk/overlay';
 import { TopMenuComponent } from './common/components/top-menu/top-menu.component';
 import { LoginLayoutComponent } from './common/components/login-layout/login-layout.component';
+import { SideNavComponent } from './common/components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogBoxComponent,
     TopMenuComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [
     AuthService,
