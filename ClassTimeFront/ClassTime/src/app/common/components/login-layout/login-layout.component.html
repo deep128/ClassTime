@@ -1,12 +1,14 @@
 <app-top-menu></app-top-menu>
-<mat-sidenav-container>
-    <mat-sidenav opened mode="side">
-        <app-side-nav></app-side-nav>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div style="min-height: 500px">
+<div class="main-container">
+    <mat-sidenav-container class="h-100">
+        <mat-sidenav opened mode="side">
+            <app-side-nav></app-side-nav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="p-3">
                 <router-outlet></router-outlet>
-        </div>
-        
-    </mat-sidenav-content>
-</mat-sidenav-container>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

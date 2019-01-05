@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', loadChildren: './components/login/login.module#LoginModule', canActivate: [LoginGuard]},
   {path: 'admin', loadChildren: './components/admin/admin-dashboard/admin-dashboard.module#AdminDashboardModule', canActivate: [AuthGuard, AdminGuard]},
-  {path: 'admin/schools', loadChildren: './components/admin/school-list/school-list.component#SchoolListComponent', canActivate: [AuthGuard, AdminGuard]}
+  {path: 'admin/schools', loadChildren: './components/admin/school-list/school-list.module#SchoolListModule', canActivate: [AuthGuard, AdminGuard]}
 ];
 
 @NgModule({

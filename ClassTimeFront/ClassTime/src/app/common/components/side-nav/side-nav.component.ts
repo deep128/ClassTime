@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  public menuList: {name: string, link: string, selected: boolean}[] = [];
+
+  constructor() {
+
+    this.menuList = [
+      {name: 'Dashboard', link: '/admin', selected: false},
+      {name: 'Schools', link: '/admin/schools', selected: false}
+    ];
+
+   }
 
   ngOnInit() {
   }
