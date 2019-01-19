@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Add School</h2>
+  <hr>
+  <form (ngSubmit)="addSchool(f)" #f="ngForm" [formGroup]="schoolForm">
+    <mat-form-field>
+      <input matInput formControlName="schoolName" name="schoolName" placeholder="School Name" />
+    </mat-form-field>
+    <br>
+    <button [disabled]="!schoolForm.valid || isSaving" mat-raised-button color="primary">
+      <div style="width: 50px; height: 35px; overflow: hidden;">
+        <span *ngIf="!isSaving">Add </span>
+        <div class="d-inlin-block pt-2 pl-3">
+          <mat-spinner *ngIf="isSaving" [diameter]="20"></mat-spinner>
+        </div>
+      </div>
+
+    </button>
+    <button [routerLink]="['/productOwner/schools']" mat-raised-button class="ml-3">
+      cancel
+    </button>
+  </form>
+</div>

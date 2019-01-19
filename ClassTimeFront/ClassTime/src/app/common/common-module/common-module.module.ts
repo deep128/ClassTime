@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatRippleModule, MatInput, MatFormField, MatButton, MatButtonModule, MatFormFieldModule, MatInputModule, MatSpinner, MatProgressSpinnerModule } from '@angular/material';
+import { AuthInterceptor } from '../interceptors/auth-interceptor';
+import { UtilService } from '../services/util.service';
 
 @NgModule({
   declarations: [],
@@ -26,4 +28,20 @@ import { MatRippleModule, MatInput, MatFormField, MatButton, MatButtonModule, Ma
     MatSpinner
   ]
 })
-export class CommonModuleModule { }
+export class CommonModuleModule {
+
+  static forRoot():ModuleWithProviders {
+    return {
+        ngModule: CommonModuleModule,
+        providers: [
+          {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi:true
+          },
+          UtilService
+        ]
+    };
+}
+
+ }

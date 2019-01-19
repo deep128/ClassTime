@@ -21,7 +21,8 @@ export class DBConnect {
 
         this.models = {
             User: this.defineUserModel(),
-            UserRole: this.defineUserRoleModel()
+            UserRole: this.defineUserRoleModel(),
+            SchoolModel: this.defineSchoolModel()
         }
 
         this.sequelize.authenticate()
@@ -56,6 +57,9 @@ export class DBConnect {
             },
             lastName: {
                 type: Sequelize.STRING
+            },
+            isActive: {
+                type: Sequelize.BOOLEAN
             }
         });
 
@@ -77,11 +81,50 @@ export class DBConnect {
             role: {
                 type: Sequelize.ENUM,
                 values: ['ADMIN', 'PRINCIPAL', 'TEACHER', 'STUDENT', 'STAFF']
+            },
+            isActive: {
+                type: Sequelize.BOOLEAN
             }
         });
 
         return UserRole;
     }
 
-}
+    private defineSchoolModel() {
+        const SchoolModel = this.sequelize.define('school',{
+            id:{
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
+            name: {
+                type: Sequelize.STRING,
+                validate: {
+                    customValidation(value, next) {
+                        console.log("value: ----",value);
+                      SchoolModel.findOne({ where: {name: value, isActive: true} })
+                        .then((school)=> {
+                            if(school) {
+                                return next('School name already exist!');
+                            }
+                            next();
+                        }).catch(err=>{
+                            return next('Some error occured!!!');
+                        });
+                    }
+                  }
+            },
+            adminId: {
+                type: Sequelize.INTEGER,
+                references: 'users',
+                referencesKey: 'id'
+            },
+            isActive: {
+                type: Sequelize.BOOLEAN
+            }
+        });
 
+        return SchoolModel;
+    }
+
+}

@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthService } from './common/services/auth.service';
 import { AuthGuard } from './auth.guard';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './common/interceptors/auth-interceptor';
 import { DialogBoxComponent } from './common/components/dialog-box/dialog-box.component';
 import { MatSnackBar, MatSnackBarContainer, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule, MatMenuModule, MatIconModule, MatSidenavModule } from '@angular/material';
 import { Overlay } from '@angular/cdk/overlay';
@@ -37,11 +35,6 @@ import { SideNavComponent } from './common/components/side-nav/side-nav.componen
     AuthGuard,
     MatSnackBar,
     Overlay,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}
   ],
   bootstrap: [AppComponent],

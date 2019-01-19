@@ -12,8 +12,8 @@ export class SideNavComponent implements OnInit {
   constructor() {
 
     this.menuList = [
-      {name: 'Dashboard', link: '/admin', selected: false},
-      {name: 'Schools', link: '/admin/schools', selected: false}
+      {name: 'Dashboard', link: '/productOwner', selected: false},
+      {name: 'Schools', link: '/productOwner/schools', selected: false}
     ];
 
    }

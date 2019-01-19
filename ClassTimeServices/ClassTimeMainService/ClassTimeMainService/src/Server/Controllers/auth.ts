@@ -59,8 +59,8 @@ export class Auth {
                         res.status(400).end("Unauthorized");
                         return;
                     }
-                    this.User({
-                        where: { "id": decoded.id },
+                    this.User.findOne({
+                        where: { "id": decoded.userid },
                         attributes: ['id']
                     }).then((user) => {
                         if (user == null) {

@@ -4,7 +4,6 @@ import { LoginService } from './login.service';
 import { AuthService } from 'src/app/common/services/auth.service';
 import { Router } from '@angular/router';
 import { UtilService } from 'src/app/common/services/util.service';
-import { utils } from 'protractor';
 import { ConfigService } from 'src/app/common/services/config.service';
 
 
@@ -12,7 +11,7 @@ import { ConfigService } from 'src/app/common/services/config.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less'],
-  providers: [LoginService, UtilService]
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
 
@@ -41,7 +40,7 @@ export class LoginComponent implements OnInit {
       else {
         this.authService.doLogin(data.token, data.roles[0].role);
         if(this.config.roles.ADMIN == data.roles[0].role)
-          this.router.navigate(["/admin"]);
+          this.router.navigate(["/productOwner"]);
       }
     })
   }
